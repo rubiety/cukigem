@@ -1,0 +1,13 @@
+= Cukagem
+
+Testing Rails gem plugins using cucumber can be difficult since gems need to be tested in the context of a host Rails application, which isn't part of your gem.  Cukagem gives you cucumber steps to make testing your gem in the context of a Rails application easy.
+
+This is not a gem but a collection of useful steps.  Simply copy the step definition files located in +step_definitions+ into your own project.
+
+== Contributions
+
+I am really looking for contributions here.  I created this after looking for a standard way of testing my gems using cucumber and I was unable to find anything (except for some nice code in the paperclip project which did most of what I needed).  Patches/pull-requests welcome.
+
+== Credits
+
+Thanks to Jon Yurek of Thoughtbot for getting me thinking about this after seeing his work on Rails app generation and cucumber within the paperclip project.
