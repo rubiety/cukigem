@@ -1,6 +1,6 @@
 ENV["RAILS_ENV"] = "test"
 
-module Cukagem
+module Cukigem
   mattr_accessor :project_root, :temp_root, :application_name
   
   self.project_root = File.expand_path(File.join(File.dirname(__FILE__), '..', '..')).freeze

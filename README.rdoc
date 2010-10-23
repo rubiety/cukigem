@@ -1,6 +1,6 @@
-= Cukagem
+= Cukigem
 
-Testing Rails gem plugins using cucumber can be difficult since gems need to be tested in the context of a host Rails application, which isn't part of your gem.  Cukagem gives you cucumber steps to make testing your gem in the context of a Rails application easy.
+Testing Rails gem plugins using cucumber can be difficult since gems need to be tested in the context of a host Rails application, which isn't part of your gem.  Cukigem gives you cucumber steps to make testing your gem in the context of a Rails application easy.
 
 This is a nice addition to gems as it's more of an integration test - verifying that your gem actually works and is successfully-installed in a Rails application via the Gemfile.
 
