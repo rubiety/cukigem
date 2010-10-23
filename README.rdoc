@@ -4,6 +4,12 @@ Testing Rails gem plugins using cucumber can be difficult since gems need to be 
 
 This is not a gem but a collection of useful steps.  Simply copy the step definition files located in +step_definitions+ into your own project.
 
+= Examples
+
+For examples using these step definitions to test a plugin/gem, see two of my projects that I'm using this for:
+* message_block
+* micro_sessions
+
 == Contributions
 
 I am really looking for contributions here.  I created this after looking for a standard way of testing my gems using cucumber and I was unable to find anything (except for some nice code in the paperclip project which did most of what I needed).  Patches/pull-requests welcome.
