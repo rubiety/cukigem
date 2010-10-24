@@ -1,6 +1,8 @@
 ENV["RAILS_ENV"] = "test"
 
 module Cukigem
+  require "active_support/core_ext"
+  
   mattr_accessor :project_root, :temp_root, :application_name
   
   self.project_root = File.expand_path(File.join(File.dirname(__FILE__), '..', '..')).freeze
