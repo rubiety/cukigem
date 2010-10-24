@@ -13,7 +13,7 @@ Given %r{I generate a rails application} do
   end
 end
 
-When %r{this gem is available in the Gemfile}
+When %r{this gem is available in the Gemfile} do
   When %{I append the following to "Gemfile" in the rails application}, %{gem "#{File.basename(Cukigem.project_root)}", :path => "#{Cukigem.project_root}"}
   When %{I append the following to "Gemfile" in the rails application}, %{
     group :test do
