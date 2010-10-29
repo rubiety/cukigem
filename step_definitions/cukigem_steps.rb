@@ -4,6 +4,12 @@ Given %r{I have a rails application} do
   And %{I run "bundle install" in the rails application}
 end
 
+Given %r{^I ensure a rails application is generated$} do
+  unless File.exists?(Cukigem.project_root)
+    Given "I generate a rails application"
+  end
+end
+
 Given %r{I generate a rails application} do
   FileUtils.rm_rf(Cukigem.temp_root)
   FileUtils.mkdir_p(Cukigem.temp_root)
