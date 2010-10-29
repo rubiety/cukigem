@@ -2,7 +2,7 @@ Given %r{I have a rails application} do
   Given %{I generate a rails application}
   And %{the Gemfile is configured for testing}
   And %{the Gemfile contains this gem}
-  And %{I run "bundle install" in the rails application}
+  And %{I run "bundle install"}
 end
 
 Given %r{^I ensure a rails application is generated$} do
@@ -21,7 +21,7 @@ Given %r{I generate a rails application} do
 end
 
 When %r{the Gemfile is configured for testing} do
-  When %{I append the following to "Gemfile" in the rails application}, %{
+  When %{I append the following to "Gemfile"}, %{
     group :test do
       gem "capybara"
       gem "rspec"
@@ -30,11 +30,11 @@ When %r{the Gemfile is configured for testing} do
 end
 
 When %r{the Gemfile contains this gem} do
-  When %{I append the following to "Gemfile" in the rails application}, %{gem "#{File.basename(Cukigem.project_root)}", :path => "#{Cukigem.project_root}"}
+  When %{I append the following to "Gemfile"}, %{gem "#{File.basename(Cukigem.project_root)}", :path => "#{Cukigem.project_root}"}
 end
 
-When %r{I setup the database for the rails application} do
-  When %{I run "bundle exec rake db:create db:migrate --trace" in the rails application}
+When %r{I setup the database} do
+  When %{I run "bundle exec rake db:create db:migrate --trace"}
 end
 
 
@@ -50,26 +50,26 @@ When %r{the rails application is running} do
   end
 end
 
-When %r{I save the following as "([^"]*)" in the rails application} do |path, string|
+When %r{I save the following as "([^"]*)"} do |path, string|
   FileUtils.mkdir_p(File.join(Cukigem.app_root, File.dirname(path)))
   File.open(File.join(Cukigem.app_root, path), "w") do |file|
     file.write(string)
   end
 end
 
-When %r{I append the following to "([^"]*)" in the rails application} do |path, string|
+When %r{I append the following to "([^"]*)"} do |path, string|
   FileUtils.mkdir_p(File.join(Cukigem.app_root, File.dirname(path)))
   File.open(File.join(Cukigem.app_root, path), "a+") do |file|
     file.write(string)
   end
 end
 
-When %r{I run "([^"]*)" in the rails application} do |command|
+When %r{I run "([^"]*)"} do |command|
   Dir.chdir(Cukigem.app_root) do
     `#{command}`
   end
 end
 
-Then %r{^the file "([^"]*)" should exist in the rails application} do |file|
+Then %r{^the file "([^"]*)" should exist} do |file|
   File.should be_exist(File.join(Cukigem.app_root, file))
 end

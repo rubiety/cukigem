@@ -2,7 +2,7 @@ Feature: Micro Sessions
   
   Scenario: Transitioning Between Pages While Passing Micro Session ID
     Given I have a rails application
-    And I save the following as "app/controllers/models_controller.rb" in the rails application:
+    And I save the following as "app/controllers/models_controller.rb":
     """
     class ModelsController < ApplicationController
       micro_sessions
@@ -15,11 +15,11 @@ Feature: Micro Sessions
       end
     end
     """
-    And I save the following as "app/views/models/index.html.erb" in the rails application:
+    And I save the following as "app/views/models/index.html.erb":
     """
     <%= link_to "New", :action => :new, :micro_sessions => true %>
     """
-    And I save the following as "app/views/models/new.html.erb" in the rails application:
+    And I save the following as "app/views/models/new.html.erb":
     """
     <%= micro_session[:string] %>
     """
