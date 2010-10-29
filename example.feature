@@ -23,13 +23,13 @@ Feature: Micro Sessions
     """
     <%= micro_session[:string] %>
     """
-    Given the rails application is running
+    And I start the rails application
     When I go to the models page
     And I follow "New"
     Then I should see "String"
   
   Scenario: Transitioning Between Pages Without Passing Micro Session ID
-    Given the rails application is running
+    Given I start the rails application
     When I go to the models page
     Then I should see "String"
     When I go to the models new page
