@@ -1,6 +1,7 @@
 Given %r{I have a rails application} do
   Given %{I generate a rails application}
-  And %{this gem is available in the Gemfile}
+  And %{the Gemfile is configured for testing}
+  And %{the Gemfile contains this gem}
   And %{I run "bundle install" in the rails application}
 end
 
@@ -19,14 +20,17 @@ Given %r{I generate a rails application} do
   end
 end
 
-When %r{this gem is available in the Gemfile} do
-  When %{I append the following to "Gemfile" in the rails application}, %{gem "#{File.basename(Cukigem.project_root)}", :path => "#{Cukigem.project_root}"}
+When %r{the Gemfile is configured for testing} do
   When %{I append the following to "Gemfile" in the rails application}, %{
     group :test do
       gem "capybara"
       gem "rspec"
     end
   }
+end
+
+When %r{the Gemfile contains this gem} do
+  When %{I append the following to "Gemfile" in the rails application}, %{gem "#{File.basename(Cukigem.project_root)}", :path => "#{Cukigem.project_root}"}
 end
 
 When %r{I setup the database for the rails application} do
