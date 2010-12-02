@@ -46,6 +46,10 @@ See this example in use on my message_block project.  All of the step definition
       And I should see "Controller-One"
       And I should see "Controller-Two"
 
+== Known Issues
+
+* Be careful when using multiple "generate a rails application" steps in one test run.  The problem is that we can only require the config/environment.rb file once, so if you blow away and generate a new application in the course of the test run, things will not behave as expected.  Cukigem does a lot to "reset" your app to a blank state so there should rarely be a need to fully generate a new application except if one doesn't already exist.
+
 == Contributions
 
 I am really looking for contributions here.  I created this after looking for a standard way of testing my gems using cucumber and I was unable to find anything (except for some nice code in the paperclip project which did most of what I needed).  Patches/pull-requests welcome.
